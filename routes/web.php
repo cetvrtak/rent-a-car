@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('new', 'App\Http\Controllers\CarController@createNew');
+Route::post('insert', 'App\Http\Controllers\CarController@store');
