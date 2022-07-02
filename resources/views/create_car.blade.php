@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         form {
             width: 200px;
             display: flex;
@@ -23,7 +37,7 @@
             <input type="text" placeholder="License" name="registration_license">
             <input type="text" placeholder="Brand" name="brand">
             <input type="text" placeholder="Model" name="model">
-            <input type="text" placeholder="Manufacture Date" name="manufacture_date">
+            <input type="date" placeholder="Manufacture Date" name="manufacture_date">
             <input type="text" placeholder="Description" name="description">
             <input type="text" placeholder="Category ID" name="category_id">
             <button type="submit" value="Add Car">Submit</button>
