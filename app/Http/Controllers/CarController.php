@@ -40,7 +40,7 @@ class CarController extends Controller
      */
     public function store(CarRequest $request)
     {
-        Car::create($request->only("registration_licence","brand","model","manufacture_date","description","category_id"));
+        Car::create($request->only("registration_license","brand","model","manufacture_date","description","category_id"));
         return response()->json(["data" => [
             "success" => true
         ]]);
@@ -71,7 +71,7 @@ class CarController extends Controller
     public function update(CarRequest $request, $id)
     {
         $car = Car::findOrFail($id);
-        $car->update($request->only("registration_licence","brand","model","manufacture_date","description","category_id"));
+        $car->update($request->only("registration_license","brand","model","manufacture_date","description","category_id"));
         return response()->json(["data" => [
             "success" => true
         ]]);

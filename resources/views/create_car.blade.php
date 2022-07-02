@@ -20,7 +20,7 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-            <input type="text" placeholder="Licence" name="registration_licence">
+            <input type="text" placeholder="License" name="registration_license">
             <input type="text" placeholder="Brand" name="brand">
             <input type="text" placeholder="Model" name="model">
             <input type="text" placeholder="Manufacture Date" name="manufacture_date">
