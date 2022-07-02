@@ -7,6 +7,7 @@ use App\Http\Resources\APIPaginateCollection;
 use App\Http\Resources\CarResource;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CarController extends Controller
 {
@@ -40,7 +41,11 @@ class CarController extends Controller
      */
     public function store(CarRequest $request)
     {
-        Car::create($request->only("registration_license","brand","model","manufacture_date","description","category_id"));
+        $car = Car::create($request->only("registration_license","brand","model","manufacture_date","description","category_id","slug"));
+        $slug_brand = Str::slug($car->brand,'_');
+        $slug_model = Str::slug($car->model,'_');
+        $slug_license = Str::slug($car->registration_license,'_');
+        $car->slug = $slug_brand."-".$slug_model."-".$slug_license;
         return response()->json(["data" => [
             "success" => true
         ]]);
